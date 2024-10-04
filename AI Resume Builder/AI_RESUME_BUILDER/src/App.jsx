@@ -1,10 +1,17 @@
 import React from 'react'
 
+import './App.css'
+import { Outlet } from 'react-router-dom'
+
 const App = () => {
   return (
-    <div>
-      <h1>hi</h1>
-    </div>
+    <>
+      
+    <Outlet/>
+
+
+
+    </>
   )
 }
 
