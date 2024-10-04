@@ -1,18 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './App.css';
+import { Outlet } from 'react-router-dom';
 
-import './App.css'
-import { Outlet } from 'react-router-dom'
-
-const App = () => {
+function App  ()  {
+  const[count,setcount] = useState(0)
+  
   return (
     <>
       
-    <Outlet/>
-
-
-
+      <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
