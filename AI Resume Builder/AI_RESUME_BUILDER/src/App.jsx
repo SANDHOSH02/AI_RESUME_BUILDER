@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import './App.css';
-import { Outlet } from 'react-router-dom';
+import React from 'react';
+import { useState } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useUser } from '@clerk/clerk-react';
+function App  () {
+  const [count ,setCount]= useState(0)
+  const{user,isLoaded,isSignedIn}=useUser();
 
-function App  ()  {
-  const[count,setcount] = useState(0)
-  
+  if (!isSignedIn)
+  {
+    return <Navigate to ={'/auth/sign-in'}/>
+  }
   return (
     <>
-      
-      <Outlet />
+      <Outlet /> 
     </>
   );
 };
