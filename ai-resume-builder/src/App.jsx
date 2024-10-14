@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [resumeData, setResumeData] = useState({
+    name: '',
+    education: '',
+    experience: '',
+  });
+
+  const handleInputChange = (e) => {
+    setResumeData({ ...resumeData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Call API to generate the resume here
+    console.log(resumeData);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center">AI Resume Builder</h1>
+      <form onSubmit={handleSubmit} className="mt-8">
+        <input
+          type="text"
+          name="name"
+          value={resumeData.name}
+          onChange={handleInputChange}
+          className="border rounded p-2 w-full mb-4"
+          placeholder="Enter your name"
+        />
+        <input
+          type="text"
+          name="education"
+          value={resumeData.education}
+          onChange={handleInputChange}
+          className="border rounded p-2 w-full mb-4"
+          placeholder="Enter your education"
+        />
+        <input
+          type="text"
+          name="experience"
+          value={resumeData.experience}
+          onChange={handleInputChange}
+          className="border rounded p-2 w-full mb-4"
+          placeholder="Enter your experience"
+        />
+        <button type="submit" className="bg-blue-500 text-white rounded p-2">Generate Resume</button>
+      </form>
+    </div>
+  );
+};
 
-export default App
+export default App;
