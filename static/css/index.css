@@ -6,7 +6,7 @@
 }
 
 body{
-    background-image: url(back2.jpg);
+    background-image: url(/assets/back2.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -19,7 +19,7 @@ body{
     width: 930px;
     height: 520px;
     box-shadow: 0 0 8px rgba(255,255,255,1);
-    background-image: url(front2.jpg);
+    background-image: url(/assets/front2.jpg);
     background-position: center;
     background-size: cover;
 }
