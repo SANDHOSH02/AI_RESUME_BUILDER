@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Your New Font', sans-serif; /* Change 'Your New Font' to the desired font */
+  }
+
+  body {
+    background: url('/assets/about/back1.jpg') center/cover no-repeat; /* Set the background image */
+  }
+
+  .about-us {
+    height: 100vh;
+    width: 70%;
+    padding: 90px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 210px;
+  }
+
+  .about {
+    width: 900px;
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(45deg, black, gray); /* Linear gradient background for the container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+  }
+
+  .text {
+    width: 540px;
+    text-align: center;
+  }
+
+  .text h2 {
+    font-size: 60px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: transparent;
+    background: linear-gradient(45deg, #CD08F0, #08F0DB); /* Linear gradient background for text color */
+    -webkit-background-clip: text; /* Use the background-clip property to apply gradient to text */
+    padding: 10px; /* Add padding to make the background visible */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    display: inline-block; /* Ensure the background applies to the entire text */
+  }
+
+  .text h5 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  span {
+    color: #0CBD6D;
+    font-weight: bold;
+    font-weight: 700;
+
+  }
+
+  .text p {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: cursive  ;
+  }
+
+  .data {
+    margin-top: 30px;
+  }
+
+  .hire {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-family: cursive;
+  }
+
+  .hire:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .hire:active,
+  .hire:focus {
+    color: white;
+    outline: blue;
+  }
+
+  .hire:active:after {
+    background: transparent;
+  }
+
+  .hire:hover:before {
+    opacity: 1;
+  }
+
+  .hire:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
