@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="slide">
+            <div class="item" style="background-image: url(/assets/gallery/wall2.jpg);">
+                <div class="content">
+                    <div class="name">LUNDEV</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <button>See more</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(/assets/gallery/wall3.jpg);">
+                <div class="content">
+                    <div class="name">LUNDEV</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    <!--<button>See more</button>!-->
+                </div>
+            </div>
+            <div class="item" style="background-image: url(/assets/gallery/wall4.jpg);">
+                <div class="content">
+                    <div class="name">LUNDEV</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    
+                </div>
+            </div>
+            <div class="item" style="background-image: url(/assets/gallery/wall5.jpg);">
+                <div class="content">
+                    <div class="name">LUNDEV</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    
+                </div>
+            </div>
+            <div class="item" style="background-image: url(/assets/gallery/wall6.jpg);">
+                <div class="content">
+                    <div class="name">LUNDEV</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                    
+                </div>
+            </div>
+            <div class="item" style="background-image: url(/assets/gallery/wall7.jpg);">
+                <div class="content">
+                    <div class="name">LUNDEV</div>
+                    <div class="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+            <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+<script>
+      document.getElementById('next').onclick = function(){
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').appendChild(lists[0]);
+}
+document.getElementById('prev').onclick = function(){
+    let lists = document.querySelectorAll('.item');
+    document.getElementById('slide').prepend(lists[lists.length - 1]);
+}
+  
+    
+</script>
+</html>
+  
