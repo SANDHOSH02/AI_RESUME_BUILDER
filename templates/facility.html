@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Card Grid</title>
+  <style>
+    :root {
+      --background-dark: #2d3548;
+      --text-light: rgba(255, 255, 255, 0.6);
+      --text-lighter: rgba(255, 255, 255, 0.9);
+      --spacing-s: 8px;
+      --spacing-m: 16px;
+      --spacing-l: 24px;
+      --spacing-xl: 32px;
+      --spacing-xxl: 64px;
+      --width-container: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+    }
+
+    body {
+      height: 100%;
+      background: #11131e;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-section {
+      display: grid;
+      gap: var(--spacing-xl);
+      max-width: var(--width-container);
+      padding: var(--spacing-xxl) var(--spacing-l);
+      width: 100%;
+    }
+
+    .card-grid {
+      display: grid;
+      gap: var(--spacing-l);
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (min-width: 540px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .card {
+      position: relative;
+      list-style: none;
+      overflow: hidden;
+      border-radius: var(--spacing-m);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card .background {
+      background-size: cover;
+      background-position: center;
+      height: 0;
+      padding-bottom: 150%;
+      position: relative;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .card:hover .background {
+      transform: scale(1.05);
+    }
+
+    .card .content {
+      position: absolute;
+      bottom: var(--spacing-m);
+      left: var(--spacing-m);
+    }
+
+    .card .category {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-s);
+      color: var(--text-light);
+    }
+
+    .card .heading {
+      font-size: 1.5rem;
+      color: var(--text-lighter);
+      line-height: 1.4;
+    }
+    h2{
+        font-size: 24px;
+        text-transform: uppercase;
+        border-bottom: 2px solid rgb(109, 212, 216);
+        border-radius: 5px;
+
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Facility</h2>
+    </div>
+  <section class="hero-section">
+    <div class="card-grid">
+      <a class="card" href="#">
+        <div class="background" style="background-image: url('https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+        <div class="content">
+          <p class="category">Category</p>
+          <h3 class="heading">Example Card Heading</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="background" style="background-image: url('https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');"></div>
+        <div class="content">
+          <p class="category">Category</p>
+          <h3 class="heading">Example Card Heading</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="background" style="background-image: url('https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');"></div>
+        <div class="content">
+          <p class="category">Category</p>
+          <h3 class="heading">Example Card Heading</h3>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div class="background" style="background-image: url('https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');"></div>
+        <div class="content">
+          <p class="category">Category</p>
+          <h3 class="heading">Example Card Heading</h3>
+        </div>
+      </a>
+    </div>
+  </section>
+</body>
+</html>
